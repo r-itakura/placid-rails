@@ -1,0 +1,54 @@
+<p style="color: Red"><%= @error %></p>
+<h1>宿泊予約一覧</h1>
+<div>
+  <%= link_to '管理者メニューへ', {controller: :admins, action: :menu} %>
+</div>
+<table border="1">
+  <% if @reservations.present? %>
+    <thead>
+      <tr>
+        <th>予約ID</th><th>宿泊者名</th><th>予約日</th><th>プランタイトル</th><th>宿泊料金</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= @reservations.each do |reservation| %>
+          <tr>
+            <td><%= reservation.id %></td>
+            <td><%= reservation.sei + reservation.mei %></td>
+            <td><%= reservation.reserve_date %></td>
+            <td><%= reservation.plan_title %></td>
+            <td><%= reservation.price %></td>
+            <td><%= link_to 'Show', reservation %></td>
+            <td><%= link_to 'Edit', edit_admin_path(reservation) %></td>
+            <td><%= link_to 'Destroy', reservation, method: :delete, data: {confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>
+<!--<table border="1">-->
+  <!--<tr>-->
+    <!--<th>予約ID</th><th>宿泊者名</th><th>予約日</th><th>プランタイトル</th><th>宿泊料金</th><th>   </th>-->
+  <!--</tr>-->
+  <!--<?php-->
+<!--// 宿泊予約一覧取得-->
+<!--$dbAccessor = new DBAccessor();-->
+<!--$stmt = $dbAccessor->getRsvList();-->
+
+  <!--while($row = $stmt->fetch(PDO::FETCH_ASSOC)){-->
+  <!--echo "<tr>";-->
+  <!--echo "	<td>".$row["RESERVE_ID"]."</td>";-->
+  <!--echo "	<td>".$row['SEI']." ".$row['MEI']."</td>";-->
+  <!--echo "	<td>".$row['RSV_D']."</td>";-->
+  <!--echo "	<td>".$row['PLAN_TITLE']."</td>";-->
+  <!--echo "	<td>".number_format($row['PRICE'])."円</td>";-->
+  <!--if($row['CANCEL_FLG'] === "1"){-->
+  <!--echo "	<td>キャンセル済</td>";-->
+  <!--}else{-->
+  <!--echo "	<td><input type='button' class='submit' value='キャンセルする' onclick='fncDel(".$row["RESERVE_ID"].")'/></td>";-->
+  <!--}-->
+  <!--echo "</tr>";-->
+  <!--}-->
+
+  <!--?>-->
+<!--</table>-->

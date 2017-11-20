@@ -1,0 +1,10 @@
+<h1>管理者メニュー</h1>
+<div>
+  <%= link_to '宿泊予約一覧', {controller: :reservations, action: :list} %>
+</div>
+<div>
+  <%= link_to '管理者登録', {controller: :admins, action: :index} %>
+</div>
+<div>
+  <a href="#" class="clsA" onclick="fncLogout();return false;">ログアウト</a>
+</div>

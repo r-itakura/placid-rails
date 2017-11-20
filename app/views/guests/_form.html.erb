@@ -1,0 +1,52 @@
+<%= form_with(model: guest, local: true) do |form| %>
+  <% if guest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(guest.errors.count, "error") %> prohibited this guest from being saved:</h2>
+
+      <ul>
+      <% guest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sei %>
+    <%= form.text_field :sei, id: :guest_sei %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mei %>
+    <%= form.text_field :mei, id: :guest_mei %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sei_kana %>
+    <%= form.text_field :sei_kana, id: :guest_sei_kana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mei_kana %>
+    <%= form.text_field :mei_kana, id: :guest_mei_kana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :guest_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tel %>
+    <%= form.text_field :tel, id: :guest_tel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sex %>
+    <%= form.text_field :sex, id: :guest_sex %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

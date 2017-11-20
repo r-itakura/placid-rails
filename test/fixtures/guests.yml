@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sei: MyString
+  mei: MyString
+  sei_kana: MyString
+  mei_kana: MyString
+  email: MyString
+  tel: MyString
+  sex: MyString
+
+two:
+  sei: MyString
+  mei: MyString
+  sei_kana: MyString
+  mei_kana: MyString
+  email: MyString
+  tel: MyString
+  sex: MyString

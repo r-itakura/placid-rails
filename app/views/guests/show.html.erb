@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sei:</strong>
+  <%= @guest.sei %>
+</p>
+
+<p>
+  <strong>Mei:</strong>
+  <%= @guest.mei %>
+</p>
+
+<p>
+  <strong>Sei kana:</strong>
+  <%= @guest.sei_kana %>
+</p>
+
+<p>
+  <strong>Mei kana:</strong>
+  <%= @guest.mei_kana %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @guest.email %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @guest.tel %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @guest.sex %>
+</p>
+
+<%= link_to 'Edit', edit_guest_path(@guest) %> |
+<%= link_to 'Back', guests_path %>

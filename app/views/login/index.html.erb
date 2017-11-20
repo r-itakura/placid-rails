@@ -1,0 +1,18 @@
+<p style="color: Red"><%= @error %></p>
+<%= form_tag controller: :login, action: :auth do %>
+    <h1 class="clsH1">管理者ログイン</h1>
+    <div>
+      <%= label_tag :name, 'ユーザー名' %>
+      <%= text_field_tag :name, '', {size: 30, maxlength: 10} %>
+    </div>
+    <div>
+      <%= label_tag :password, 'パスワード' %>
+      <%= password_field_tag :password, '', {size: 30, maxlength: 10} %>
+    </div>
+    <br />
+    <div>
+      <!--ログイン後にリダイレクトすべきアクションを隠しフィイールドにセット-->
+      <%= hidden_field_tag :referer, flash[:refeler] %>
+      <%= submit_tag 'ログイン' %>
+    </div>
+<% end %>

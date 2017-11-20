@@ -1,0 +1,57 @@
+<%= form_with(model: reservation, local: true) do |form| %>
+  <% if reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+      <ul>
+      <% reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :hotel_id %>
+    <%= form.number_field :hotel_id, id: :reservation_hotel_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :guest_id %>
+    <%= form.number_field :guest_id, id: :reservation_guest_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plan_id %>
+    <%= form.number_field :plan_id, id: :reservation_plan_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :guest_num %>
+    <%= form.number_field :guest_num, id: :reservation_guest_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reserve_date %>
+    <%= form.date_select :reserve_date, id: :reservation_reserve_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reserve_date_num %>
+    <%= form.number_field :reserve_date_num, id: :reservation_reserve_date_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :reservation_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cancel_flag %>
+    <%= form.check_box :cancel_flag, id: :reservation_cancel_flag %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
