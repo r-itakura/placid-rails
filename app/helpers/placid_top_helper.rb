@@ -1,0 +1,2 @@
+module PlacidTopHelper
+end

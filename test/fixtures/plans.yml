@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hotel_id: 1
+  title: MyString
+  content: MyString
+  price: 1
+  image: MyString
+  start_date: 2017-11-21
+  end_date: 2017-11-21
+
+two:
+  hotel_id: 1
+  title: MyString
+  content: MyString
+  price: 1
+  image: MyString
+  start_date: 2017-11-21
+  end_date: 2017-11-21

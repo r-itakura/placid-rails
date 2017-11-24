@@ -1,0 +1,47 @@
+<%= form_tag controller: :search, action: :list do %>
+    <%= yield :include_header %>
+  <div id="divHeader">
+    <!--ヘッダー-->
+
+    <?php include("contents/includeHeader.php"); ?>
+  </div>
+  <div id="divMainView">
+    <!--メインビジュアル-->
+    <div id="divNavTop">
+      <!--ナビゲーション-->
+      <?php include("contents/includeNav.php"); ?>
+    </div>
+  </div>
+  <div id="divSearch">
+    <!--空室検索-->
+    <hr>
+    <?php include("contents/includeSearch.php"); ?>
+  </div>
+  <div id="divContents">
+    <div id="divContentsMainTop">
+      <div id="divBanner">
+        <!--バナー-->
+        <ul>
+          <li id="banner1"><a href="#"><img src="images/banner1.png" alt="春のキャンペーンご宿泊料金20%off" width="200" height="80"></a></li>
+          <li id="banner2"><a href="#"><img src="images/banner2.png" alt="PLACID九段下オープンキャンペーン" width="200" height="80"></a></li>
+        </ul>
+      </div>
+      <div id="divNews">
+        <!--記事-->
+        <h1 id="divNewsTitle"><img src="images/lblNewsTitle.png" alt="NewsTopics" width="174" height="26"></h1>
+        <ul id="divArticle">
+          <li id="article1"><span class="clsFontGothic clsArticleDay">2013.3.25</span><span class="clsFontGothic clsArticle">　　　　　　　　　【春のキャンペーン】ご宿泊料金20%offキャンペーンについて</span></li>
+          <li id="article2"><span class="clsFontGothic clsArticleDay">2013.3.15</span><span class="clsFontGothic clsArticle">　　　　　　　　　大浴場がご利用いただけるようになりました。</span></li>
+          <li id="article3"><span class="clsFontGothic clsArticleDay">2013.3.12</span><span class="clsFontGothic clsArticle">　　　　　　　　　朝食をリニューアルしました。是非ご利用ください。</span></li>
+          <li id="article4"><span class="clsFontGothic clsArticleDay">2013.3.10</span><span class="clsFontGothic clsArticle">　　　　　　　　　支配人よりお得なお知らせがございます。</span></li>
+          <li id="article5"><span class="clsFontGothic clsArticleDay">2013.3.1</span><span class="clsFontGothic clsArticle">　　　　　　　　　　PLACID 九段下　オープンキャンペーンについて</span></li>
+          <li id="ichiran"><span class="clsFontGothic clsArticle">&gt;&gt;　一覧はこちら</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="divFooter">
+    <!--フッター-->
+    <?php include("contents/includeFooter.php"); ?>
+  </div>
+<% end %>

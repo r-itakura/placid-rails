@@ -5,17 +5,19 @@ one:
   guest_id: 1
   plan_id: 1
   guest_num: 1
-  reserve_date: 2017-11-20
+  reserve_date: 2017-11-21
   reserve_date_num: 1
   price: 1
   cancel_flag: false
+  room_id: 1
 
 two:
   hotel_id: 1
   guest_id: 1
   plan_id: 1
   guest_num: 1
-  reserve_date: 2017-11-20
+  reserve_date: 2017-11-21
   reserve_date_num: 1
   price: 1
   cancel_flag: false
+  room_id: 1

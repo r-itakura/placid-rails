@@ -5,6 +5,11 @@ class AdminsController < ApplicationController
   def menu
   end
 
+  def logout
+    reset_session
+    logger.debug('ログアウト完了')
+  end
+
   # GET /admins
   # GET /admins.json
   def index

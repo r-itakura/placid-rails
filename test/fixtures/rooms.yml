@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hotel_id: 1
+  plan_id: 1
+  room_no: MyString
+  smoke_flag: false
+  bed_type: MyString
+  usable_flag: false
+  maximum_capacity: 1
+
+two:
+  hotel_id: 1
+  plan_id: 1
+  room_no: MyString
+  smoke_flag: false
+  bed_type: MyString
+  usable_flag: false
+  maximum_capacity: 1

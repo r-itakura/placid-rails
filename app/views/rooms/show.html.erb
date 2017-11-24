@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hotel:</strong>
+  <%= @room.hotel_id %>
+</p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @room.plan_id %>
+</p>
+
+<p>
+  <strong>Room no:</strong>
+  <%= @room.room_no %>
+</p>
+
+<p>
+  <strong>Smoke flag:</strong>
+  <%= @room.smoke_flag %>
+</p>
+
+<p>
+  <strong>Bed type:</strong>
+  <%= @room.bed_type %>
+</p>
+
+<p>
+  <strong>Usable flag:</strong>
+  <%= @room.usable_flag %>
+</p>
+
+<p>
+  <strong>Maximum capacity:</strong>
+  <%= @room.maximum_capacity %>
+</p>
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>

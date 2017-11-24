@@ -9,6 +9,7 @@ class CreateReservations < ActiveRecord::Migration[5.1]
       t.integer :reserve_date_num
       t.integer :price
       t.boolean :cancel_flag
+      t.integer :room_id
 
       t.timestamps
     end

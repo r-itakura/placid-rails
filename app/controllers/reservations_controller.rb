@@ -7,32 +7,25 @@ class ReservationsController < ApplicationController
     require "date"
     today = Date.today
     count = Reservation.where('reserve_date >= ?', today).count
-
+    logger.debug(count)
     if count == 0
       # 取得件数が0の場合
       @error = '宿泊予約はありません。'
     else
       # 一覧取得SQL文作成
-      $strSql = "select ";
-      $strSql .= "  TRESERVE.RESERVE_ID, ";
-      $strSql .= "  TGUEST.SEI, ";
-      $strSql .= "  TGUEST.MEI, ";
-      $strSql .= "  TRESERVE.RSV_D, ";
-      $strSql .= "  TPLAN.PLAN_TITLE, ";
-      $strSql .= "  TRESERVE.PRICE, ";
-      $strSql .= "  TRESERVE.CANCEL_FLG ";
-      $strSql .= "from ";
-      $strSql .= "  TRESERVE ";
-      $strSql .= "  inner join TGUEST on TRESERVE.GUEST_ID = TGUEST.GUEST_ID ";
-      $strSql .= "  left outer join TPLAN on TRESERVE.PLAN_ID = TPLAN.PLAN_ID ";
-      $strSql .= "where cast(TRESERVE.RSV_D as date) >= current_date ";
-      $strSql .= "order by TRESERVE.RSV_D asc, TRESERVE.RESERVE_ID asc ";
-      @reservations = Reservation.where('reserve_date >= ?', today)
+      @reservations = Reservation.where('reserve_date >= ?', today).order(reserve_date: :asc, id: :asc)
+      render 'reservations/list'
     end
-    # if($ret === "0"){
-    #     // 取得件数が0の場合
-    # $errMsg = "宿泊予約はありません。";
-    # }
+  end
+
+  # 予約キャンセル
+  def cancel
+    reservation = Reservation.find(params[:no])
+    if reservation.update(cancel_flag: true)
+      logger.debug('更新成功');
+    else
+      logger.debug('更新失敗');
+    end
   end
 
   # GET /reservations
@@ -96,13 +89,14 @@ class ReservationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_reservation
-      @reservation = Reservation.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def reservation_params
-      params.require(:reservation).permit(:hotel_id, :guest_id, :plan_id, :guest_num, :reserve_date, :reserve_date_num, :price, :cancel_flag)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def reservation_params
+    params.require(:reservation).permit(:hotel_id, :guest_id, :plan_id, :guest_num, :reserve_date, :reserve_date_num, :price, :cancel_flag, :room_id)
+  end
 end
+

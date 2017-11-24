@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120101008) do
+ActiveRecord::Schema.define(version: 20171121094145) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,24 @@ ActiveRecord::Schema.define(version: 20171120101008) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hotels", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.integer "hotel_id"
+    t.string "title"
+    t.string "content"
+    t.integer "price"
+    t.string "image"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reservations", force: :cascade do |t|
     t.integer "hotel_id"
     t.integer "guest_id"
@@ -41,6 +59,19 @@ ActiveRecord::Schema.define(version: 20171120101008) do
     t.integer "reserve_date_num"
     t.integer "price"
     t.boolean "cancel_flag"
+    t.integer "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "hotel_id"
+    t.integer "plan_id"
+    t.string "room_no"
+    t.boolean "smoke_flag"
+    t.string "bed_type"
+    t.boolean "usable_flag"
+    t.integer "maximum_capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
